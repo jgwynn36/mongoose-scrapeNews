@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>Scrape News</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">Scrape News</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Saved Articles</a>
+        </li>
+        <input class="btn btn-primary btn-sm" type="submit" value="Submit">
+        <input id="clear-all" class="btn btn-secondary btn-sm" type="reset" value="Reset">
+      </ul>
+    </div>
+  </nav>
+
+  <div class="card bg-dark text-white">
+    <img src="../public/assets/images/news_img.jpeg" class="card-img" alt="News">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Scrape n' News</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+        This content is a little bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p>
+    </div>
+  </div>
+
+  <div class="container-fluid articles">
+    <div class="card" style="width: 18rem;">
+      <img src="..." class="card-img-top" id="photo" alt="photo">
+      <div class="card-body">
+        <h2 id="Headline"></h2>
+        <p id="Summary" class="card-text"></p>
+        <footer id="URL"></footer>
+      </div>
+    </div>
+  </div>
+
+  <div id="results"></div>
+
+  <footer class="footer">
+    <footer class="blockquote-footer">Bad news isn't wine. It doesn't improve with age. <cite
+        title="Colin Powell">Source Title</cite></footer>
+    </blockquote>
+  </footer>
+
+  <!-- 
+  <h1>Scrape News App</h1>
+  <div id="user-input">
+    <p>Title</p>
+    <input type="text" id="title" />
+    <br>
+    <p>Note</p>
+    <textarea id="note"></textarea>
+    <div id="buttons">
+      <div id="action-button">
+        <button id="make-new">Submit</button>
+      </div>
+      <button id="clear-all">Delete All</button>
+    </div>
+  </div>
+
+  <div id="results"></div> -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -25,9 +25,12 @@
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.2",
-    "heroku": "^7.22.9",
+    "heroku": "^7.22.10",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.4.0",
+    "jquery-migrate": "^3.0.1",
     "mongojs": "^2.6.0",
-    "mongoose": "^5.5.0",
+    "mongoose": "^5.5.3",
     "morgan": "^1.9.1"
   }
 }

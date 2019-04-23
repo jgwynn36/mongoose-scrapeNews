@@ -5,43 +5,55 @@ function getResults() {
 
   $.getJSON("/all", (data) => {
     for (let i = 0; i < data.length; i++) {
-      $("#results").prepend("<p class='data-entry' data-id=" + data[i]._id + "><span class='dataTitle' data-id=" +
-        data[i]._id + ">" + data[i].Headline + data[i].Summary + data[id].URL + data[id].photo + "</span><span class=delete>X</span></p>");
+      $("#results").append("<card class='data-entry' data-id=" + data[i]._id + ">" + "<span class='dataHeadline' data-id=" +
+        data[i]._id + data[i].Headline + ">" +
+        "<span class='dataSummary' data-id=" +
+        data[i]._id + data[i].Summary + ">" + "<span class='dataURL' data-id=" +
+        data[i]._id + data[i].URL + ">" + "<span class='dataPhoto' data-id=" +
+        data[i]._id + data[i].photo + ">" + "</span><span class=delete>X</span></card>");
     }
   });
 }
+
+// $.getJSON("/all", (data) => {
+//   for (let i = 0; i < data.length; i++) {
+//     $("#results").prepend("<card class='data-entry' data-id=" + data[i]._id + "><span class='dataSummary' data-id=" +
+//       data[i]._id + ">" + data[i].Headline + data[i].Summary + data[i].URL + data[i].photo + "</span><span class=delete>X</span></card>");
+//   }
+// });
+// }
 
 // Runs the getResults function as soon as the script is executed
 getResults();
 
 // When the #make-new button is clicked
-$(document).on("click", "#make-new", function() {
+$(document).on("click", "#make-new", function () {
   // AJAX POST call to the submit route on the server
   // This will take the data from the form and send it to the server
   $.ajax({
-    type: "POST",
-    dataType: "json",
-    url: "/submit",
-    data: {
-      title: $("#title").val(),
-      note: $("#note").val(),
-      created: Date.now()
-    }
-  })
-  // If that API call succeeds, add the title and a delete button for the note to the page
+      type: "POST",
+      dataType: "json",
+      url: "/submit",
+      data: {
+        title: $("#title").val(),
+        note: $("#note").val(),
+        created: Date.now()
+      }
+    })
+    // If that API call succeeds, add the title and a delete button for the note to the page
     .then((data) => {
-    // Add the title and delete button to the #results section
+      // Add the title and delete button to the #results section
       $("#results").prepend("<p class='data-entry' data-id=" + data._id + "><span class='dataTitle' data-id=" +
-      data._id + ">" + data.Headline + "</span><span class=delete>X</span></p>");
+        data._id + ">" + data.Headline + "</span><span class=delete>X</span></p>");
       // Clear the note and title inputs on the page
       $("#Summary").val("");
       $("#URL").val("");
-      $("#photo").val(""); 
+      $("#photo").val("");
     });
 });
 
 // When the #clear-all button is pressed
-$("#clear-all").on("click", function() {
+$("#clear-all").on("click", function () {
   // Make an AJAX GET request to delete the notes from the db
   $.ajax({
     type: "GET",
@@ -55,7 +67,7 @@ $("#clear-all").on("click", function() {
 });
 
 // When user clicks the delete button for a note
-$(document).on("click", ".delete", function() {
+$(document).on("click", ".delete", function () {
   // Save the p tag that encloses the button
   let selected = $(this).parent();
   // Make an AJAX GET request to delete the specific note
@@ -71,8 +83,8 @@ $(document).on("click", ".delete", function() {
       // Clear the note and title inputs
       $("#Headline").val("");
       $("#Summary").val("");
-      $("#URL").val(""); 
-      $("#photo").val(""); 
+      $("#URL").val("");
+      $("#photo").val("");
       // Make sure the #action-button is submit (in case it's update)
       $("#action-button").html("<button id='make-new'>Submit</button>");
     }
@@ -80,7 +92,7 @@ $(document).on("click", ".delete", function() {
 });
 
 // When user click's on note title, show the note, and allow for updates
-$(document).on("click", ".dataTitle", function() {
+$(document).on("click", ".dataTitle", function () {
   // Grab the element
   let selected = $(this);
   // Make an ajax call to find the note
@@ -100,7 +112,7 @@ $(document).on("click", ".dataTitle", function() {
 });
 
 // When user click's update button, update the specific note
-$(document).on("click", "#updater", function() {
+$(document).on("click", "#updater", function () {
   // Save the selected element
   let selected = $(this);
   // Make an AJAX POST request

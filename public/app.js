@@ -5,12 +5,7 @@ function getResults() {
 
   $.getJSON("/all", (data) => {
     for (let i = 0; i < data.length; i++) {
-      $("#results").append("<card class='data-entry' data-id=" + data[i]._id + ">" + "<span class='dataHeadline' data-id=" +
-        data[i]._id + data[i].Headline + ">" +
-        "<span class='dataSummary' data-id=" +
-        data[i]._id + data[i].Summary + ">" + "<span class='dataURL' data-id=" +
-        data[i]._id + data[i].URL + ">" + "<span class='dataPhoto' data-id=" +
-        data[i]._id + data[i].photo + ">" + "</span><span class=delete>X</span></card>");
+      $("#results").append("<p class='data-entry' data-id=" + data[i]._id + ">" + "<h3 class='dataHeadline'>" + data[i].Headline + "</h3>" + "<h5 class='dataSummary'>" + data[i].Summary + "/h5>" + "<a class='dataURL'>" + data[i].URL + "/a>" + "<span class='dataPhoto'>" + data[i].photo + "/span>" + "</span><span class=delete>X</span></p>");
     }
   });
 }

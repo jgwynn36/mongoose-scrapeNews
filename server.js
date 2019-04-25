@@ -46,10 +46,10 @@ app.get("/scrape", (req, res) => {
       // Add the text and href of every link, and save them as properties of the result object
       result.title = $(element).children("a").text();
       result.link = $(element).children("a").attr("href");
-      result.summary = $(element).children("a").attr.text(); 
+      result.Summary = $(element).children("a").attr.text(); 
 
       // Create a new Article using the `result` object built from scraping
-      db.Article.create(result)
+      db.Articles.create(result)
         .then(dbArticle => {
           // View the added result in the console
           console.log(dbArticle);
@@ -67,9 +67,14 @@ app.get("/scrape", (req, res) => {
 
 // Route for getting all Articles from the db
 app.get("/articles", (req, res) => {
+  console.log('running')
   // Grab every document in the Articles collection
-  db.Article.find({})
-    .then(dbArticle => {
+  db.Articles.findById({
+      _id: "5cc1d14c07ea3f54cb60a702"
+      // title: "Biden"
+    }).then(dbArticle => {
+      console.log("This is to find what articles!!!!!" + dbArticle);
+
       // If we were able to successfully find Articles, send them back to the client
       res.json(dbArticle);
     })
@@ -82,7 +87,7 @@ app.get("/articles", (req, res) => {
 // Route for grabbing a specific Article by id, populate it with it's note
 app.get("/articles/:id", (req, res) => {
   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
-  db.Article.findOne({
+  db.Articles.findOne({
       _id: req.params.id
     })
     // ..and populate all of the notes associated with it
@@ -105,7 +110,7 @@ app.post("/articles/:id", (req, res) => {
       // If a Note was created successfully, find one Article with an `_id` equal to `req.params.id`. Update the Article to be associated with the new Note
       // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
       // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-      return db.Article.findOneAndUpdate({
+      return db.Articles.findOneAndUpdate({
         _id: req.params.id
       }, {
         note: dbNote._id

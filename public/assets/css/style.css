@@ -1,12 +1,25 @@
 body {
-    text-align: center;
-    background-color: cornflowerblue;
-}
+     background-color: #F2F6D0
+ }
 
-h1 {
-    font-size: 40px;
-    color: white;
-}
+ #wrapper {
+     width: 960px;
+     margin-left: auto;
+     margin-right: auto;
+     padding-top: 5%;
+ }
+
+ #articles {
+     display: inline-block;
+     overflow: auto;
+     width: 60%;
+     height: 700px;
+ }
+
+ #notes {
+     float: right;
+     width: 30%;
+ }
 
 .delete {
     margin-left: 20px;
@@ -24,34 +37,6 @@ input {
     background-color: antiquewhite;
 }
 
-textarea {
-    width: 400px;
-    height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 24px;
-    background-color: antiquewhite;
-
-}
-
-.data-title {
-    cursor: pointer;
-    font-size: 24px;
-}
-
-#results {
-    width: 400px;
-    height: 200px;
-    overflow: auto;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: antiquewhite;
-}
-
-#action-button {
-    display: inline-block;
-}
-
-#buttons {
-    margin: 20px;
+.jumbotron {
+    background-image: url("../images/newArticle.jpeg")
 }

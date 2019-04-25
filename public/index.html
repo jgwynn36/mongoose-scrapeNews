@@ -31,35 +31,54 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Saved Articles</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" id="scrape" href="">Scrape Articles</a>
+        </li>
         <input class="btn btn-primary btn-sm" type="submit" value="Submit">
         <input id="clear-all" class="btn btn-secondary btn-sm" type="reset" value="Reset">
       </ul>
     </div>
   </nav>
 
-  <!-- <div class="container">
-    <div class="card bg-dark text-white">
-      <img src="../public/assets/images/newArticle.jpeg" class="card-img" alt="News">
-      <div class="card-img-overlay">
-        <h5 class="card-title">Scrape n' News</h5>
+  <div class="jumbotron">
+    <div class="container-fluid">
+      <div class="card bg-dark text-white">
+        <h2 class="card-title">Scrape n' News</h2>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
           content.
           This content is a little bit longer.</p>
         <p class="card-text">Last updated 3 mins ago</p>
       </div>
-    </div> -->
+    </div>
+  </div>
+  <div>
+    <div id="articles"></div>
+    <div id="notes"></div>
+  </div>
 
-  <div class="container-fluid">
-    <p id="results" class="data-entry"></p>
-    <!-- <div id="results" class="data-entry" class="card">
-      <h3>
-        <a class="dataHeadline" href="dataURL"></a>
-        <a class="btn btn-success save" href="">Save Article</a>
-      </h3>
-      <img src="" class="card-img-top" class="dataPhoto" alt="photo">
-      <div class="dataSummary"></div>
-      <footer class="dataURL"></footer>
-    </div> -->
+  <div id="wrapper">
+    <div id="articles">
+    </div>
+    <div id="notes"></div>
+  </div>
+
+  <!-- <div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="" class="card-img" id="Photo" alt="photo">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body" id="Results">
+          <h5 class="card-title" id="Headline"></h5>
+          <p class="card-text dataSummary" id="Summary"></p>
+          <p class="card-text" id="URL"><small class="text-muted"></small></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="container-fluid article-container">
+    <div id="articles"></div>
   </div>
 
   <footer class="footer">

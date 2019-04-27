@@ -7,7 +7,8 @@ $.getJSON("/articles", data => {
   }
 });
 
-$("#scrape").on("click", function () {
+$("#scrape").on("click", function (e) {
+  e.preventDefault();
   $.get("/scrape", (err, data) => {
     if (err) {
       console.log(err);

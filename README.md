@@ -2,11 +2,20 @@
 
 ## Description
 
-Scrape News is a web app that lets users view and leave comments on the latest news. Deployed at 
+Scrape News is a web app that lets users view and leave comments on the latest news. Deployed at Heroku https://scrape-news-heroku.herokuapp.com/. 
+
+## Installation
+
+### NPM Packages
+1. express
+2. express-handlebars
+3. mongoose
+4. body-parser
+5. cheerio
 
 ## Examples of how to use each part of the application
 
-1. The dashboard 
+1. The dashboard
    !Screenshot](Images/Customer-Interface.png)
    * Displays all of the recipes
    * Clicking on the image of a recipe will pull up basic information about the recipe
@@ -15,17 +24,16 @@ Scrape News is a web app that lets users view and leave comments on the latest n
    * You can search the page for recipes by name or by ingredient
 
 ## Preview
-    
+
 A video preview of the application running with voice commentary (audio quality is low)
 
 ## Technologies Used
-   
-   * Mongoose
-   * Node.js
-   * Javascript
-   * Travis CI
-   * Materialize Framework
-   * ESLint
-   * HTML
-   * CSS
-   
+
+* Mongoose
+* Node.js
+* Javascript
+* Travis CI
+* Materialize Framework
+* ESLint
+* HTML
+* CSS
